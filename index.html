@@ -614,6 +614,13 @@ ul li:before{border-radius:2px;transform:rotate(45deg);width:6px;height:6px;top:
   .center-card h3{font-size:clamp(22px,2vw,30px)}
   .stat{padding-top:3.1vh;padding-bottom:2.7vh}.stat b{font-size:clamp(28px,3vw,45px)}
 }
+.dynamics-slide{align-items:center;text-align:center;background:radial-gradient(ellipse at 50% 45%,#e4f5f7,transparent 65%)}
+.dynamics-slide>.eyebrow{margin-bottom:20px;letter-spacing:.25em}
+.dynamics-slide h1{font-size:clamp(40px,4.5vw,72px);line-height:1.12;letter-spacing:-.045em;max-width:100%}
+.dynamics-slide h1 span{display:block;color:var(--acc);font-size:.9em;margin-top:12px}
+.dynamics-subtitle{font-size:clamp(16px,1.6vw,24px);margin-top:22px;color:#4a6a80}
+.dynamics-question{font-size:clamp(19px,2.1vw,32px);font-weight:800;color:var(--navy);margin-top:4vh;padding-top:3vh;border-top:1px solid #c5dfe8;letter-spacing:-.025em}
+.dynamics-start{font-size:clamp(15px,1.5vw,22px);font-weight:800;letter-spacing:.06em;margin-top:3vh;padding:16px 28px;border-radius:12px;background:#074b78;color:#fff;box-shadow:0 12px 30px -18px #074b7870}
 @media(prefers-reduced-motion:reduce){.slide,.reveal{transition:none!important;transform:none!important;filter:none!important}}
 </style>
 </head>
@@ -628,6 +635,7 @@ ul li:before{border-radius:2px;transform:rotate(45deg);width:6px;height:6px;top:
     <button type="button" class="pill" data-who="3">Marlon Pérez</button>
     <button type="button" class="pill" data-who="4">Alvaro Cortez</button>
     <button type="button" class="pill" data-who="5">Jeffrey Carino</button>
+    <button type="button" class="pill" data-who="6">Dinámica</button>
   </nav>
   <span id="count" aria-live="polite" aria-atomic="true"></span>
   <div class="brand-logo"><img src="assets/imagenes/logo.png" alt="PoliTech S.A." width="1254" height="1254" decoding="async"></div>
@@ -960,11 +968,12 @@ ul li:before{border-radius:2px;transform:rotate(45deg);width:6px;height:6px;top:
     </div>
   </section>
 
-  <section class="slide" data-who="5" data-acc="#E07A2E" data-notes="Conduce Jeffrey. Usar las cinco situaciones de la dinámica. Cada integrante responde preguntas de su tema.">
-    <div class="eyebrow reveal" style="--d:0">Participación</div>
-    <div class="big reveal" style="--d:1;font-size:clamp(56px,9vw,140px)">¿De quién es<br>este <em>gasto?</em></div>
-    <p class="reveal" style="--d:2;margin-top:4vh;font-size:clamp(18px,2vw,26px)">Levanten la cartulina del área que creen responsable.</p>
-    <p class="reveal" style="--d:3;margin-top:5vh;font-family:Playfair Display,serif;font-size:clamp(26px,3vw,40px);color:var(--acc);font-weight:700">Preguntas</p>
+  <section class="slide dynamics-slide" data-who="6" data-acc="#009aa6" data-notes="Dinámica: Operación PoliTech — El código oculto. Presentar el desafío de Contabilidad por Áreas de Responsabilidad e invitar a los equipos a descifrar el código.">
+    <div class="eyebrow reveal" style="--d:0">DINAMICA</div>
+    <h1 class="reveal" style="--d:1">OPERACIÓN POLITECH<span>EL CÓDIGO OCULTO 🔐</span></h1>
+    <p class="dynamics-subtitle reveal" style="--d:2">Un desafío de Contabilidad por Áreas de Responsabilidad.</p>
+    <p class="dynamics-question reveal" style="--d:3">¿PODRÁ TU EQUIPO DESCIFRAR EL CÓDIGO?</p>
+    <p class="dynamics-start reveal" style="--d:4">¡EL TIEMPO COMIENZA AHORA!</p>
   </section>
 
 </div>
@@ -980,7 +989,7 @@ ul li:before{border-radius:2px;transform:rotate(45deg);width:6px;height:6px;top:
   const pills = [...document.querySelectorAll('.pill')];
   const total = slides.length;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const sectionNames = ['POLITECH · PRESENTACIÓN', 'EMPRESA Y MODELO DE NEGOCIO', 'RESPONSABILIDAD Y ORGANIZACIÓN', 'PRODUCTOS Y PRODUCCIÓN', 'GESTIÓN ADMINISTRATIVA', 'RESULTADOS Y CONCLUSIONES'];
+  const sectionNames = ['POLITECH · PRESENTACIÓN', 'EMPRESA Y MODELO DE NEGOCIO', 'RESPONSABILIDAD Y ORGANIZACIÓN', 'PRODUCTOS Y PRODUCCIÓN', 'GESTIÓN ADMINISTRATIVA', 'RESULTADOS Y CONCLUSIONES', 'DINÁMICA · EL CÓDIGO OCULTO'];
   slides.forEach((slide, index) => {
     slide.dataset.section = sectionNames[+slide.dataset.who];
     slide.setAttribute('aria-label', 'Diapositiva ' + (index + 1) + ' de ' + total);
